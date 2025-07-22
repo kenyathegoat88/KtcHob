@@ -24,7 +24,8 @@ end
 
 showStartupMessage()
 
--- Cambiar título y subtítulo del hub
+
+-- Cargar librería de UI y crear ventana principal
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Twistzzisreal/UI_Libarys/refs/heads/main/Twistzz%20/Source"))()
 local Window = Library:CreateWindow({
     Title = "Ktc Hub | TPS STREET SOCCER (Free Version)",
@@ -36,7 +37,6 @@ local Window = Library:CreateWindow({
     MinimizeKeybind = Enum.KeyCode.End,
 })
 
--- Aquí va el resto del contenido original (alcanzado desde el archivo del usuario)
 
 local success, err = pcall(function()
     local function safeDestroy(obj)
@@ -187,16 +187,6 @@ end
 
 
 --// Library
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Twistzzisreal/UI_Libarys/refs/heads/main/Twistzz%20/Source"))()
-local Window = Library:CreateWindow({
-    Title = "Ktc Hub | TPS STREET SOCCER (Free Version)",
-    Theme = "Void",
-    
-    Size = UDim2.fromOffset(570, 370),
-    Transparency = 0,
-    Blurring = true,
-    MinimizeKeybind = Enum.KeyCode.End,
-})
 
 
 local Themes = {
