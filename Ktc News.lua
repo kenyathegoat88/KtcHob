@@ -1,16 +1,28 @@
--- Texto flotante al ejecutar el script
-local StarterGui = game:GetService("StarterGui")
-local message = Instance.new("Message")
-message.Text = "Kenya se follo al AntiCheat"
-StarterGui:SetCore("ChatMakeSystemMessage", {
-    Text = message.Text,
-    Color = Color3.fromRGB(255, 70, 70),
-    Font = Enum.Font.SourceSansBold,
-    FontSize = Enum.FontSize.Size96
-})
-delay(3, function()
-    message:Destroy()
-end)
+-- Crear UI que aparece al ejecutar el script
+local function showStartupMessage()
+    local player = game.Players.LocalPlayer
+    local gui = Instance.new("ScreenGui")
+    gui.Name = "StartupMessageUI"
+    gui.ResetOnSpawn = false
+    gui.Parent = player:WaitForChild("PlayerGui")
+
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(1, 0, 0, 50)
+    label.Position = UDim2.new(0, 0, 0.1, 0)
+    label.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    label.BackgroundTransparency = 0.3
+    label.Text = "Kenya se follo al AntiCheat"
+    label.TextColor3 = Color3.fromRGB(255, 70, 70)
+    label.Font = Enum.Font.GothamBold
+    label.TextSize = 28
+    label.Parent = gui
+
+    task.delay(3, function()
+        gui:Destroy()
+    end)
+end
+
+showStartupMessage()
 
 -- Cambiar título y subtítulo del hub
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Twistzzisreal/UI_Libarys/refs/heads/main/Twistzz%20/Source"))()
